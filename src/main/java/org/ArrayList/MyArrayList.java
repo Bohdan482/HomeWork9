@@ -17,6 +17,9 @@ public class MyArrayList<T> {
     }
 
     public T[] remove (int index){
+        if (index < 0 || index >= size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
         T[] result = (T[]) new Object[data.length - 1];
         for (int i = 0; i < index; i++){
             result[i] = data[i];
